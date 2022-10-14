@@ -1,0 +1,36 @@
+package autoCalc;
+
+public class ObjectMain {
+
+	public static void main(String[] args) {
+		Blueprint c1 = new Blueprint();
+		
+		c1.name = "Credit Card";
+		c1.balance = 100000;
+		c1.loan = 300000;
+		
+		Invoice in1 = new Invoice();
+		in1.totalAmount = 0;
+		
+		System.out.println("カード名: " + c1.name);
+		System.out.println("残高: " + c1.balance +"円");
+		System.out.println("融資可能額: " +c1.loan +"円");
+		System.out.println("現在の請求額:" + in1.totalAmount +"円");
+		
+		System.out.println("");
+		while(c1.balance>= 0) {
+		System.out.println("購入金額を入力ください");
+		
+		int amount = new java.util.Scanner(System.in).nextInt();
+		double tax = 1.1;
+		double totalAmount= amount*tax;
+		System.out.println("請求金額は"+ Math.round(totalAmount) + "円");
+		
+		c1.balance -= totalAmount;
+		System.out.println("現在の残高は" + Math.round(c1.balance) + "円");	
+		}
+		if (c1.balance<0) {
+			System.out.println("残高不足です。");
+					}
+				}
+		}
