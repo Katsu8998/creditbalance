@@ -1,19 +1,13 @@
 package autoCalc;
 
 public class Blueprint {
+	//クレジットカードの初期設定金額
 	String name;
 	int balance;
-	int loan;
+
 	public void maxAmount() {
 		this.balance = 100000;
 		System.out.println("現在の残高は" + balance);
 	}
-	public void maxloan() {
-		this.loan=300000;
-		System.out.println("現在可能な融資額は"+ loan);
-	}
+
 }
-		
-
-	
-
